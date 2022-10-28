@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CopiumRenderer", "projects\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test Bench", "projects\Test Bench\Test Bench.vcxproj", "{05CCA91E-CEF6-429F-97FA-DF474DCF27B9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CopiumIO", "CopiumIO\CopiumIO.vcxproj", "{1CF989D1-36E4-4F9D-B511-352025811A6B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CopiumIO", "projects\CopiumIO\CopiumIO.vcxproj", "{1CF989D1-36E4-4F9D-B511-352025811A6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

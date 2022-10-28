@@ -30,6 +30,11 @@
     <None Include="Source\CopiumRenderer\Shaders\shader.frag" />
     <None Include="Source\CopiumRenderer\Shaders\shader.vert" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CopiumIO\CopiumIO.vcxproj">
+      <Project>{1cf989d1-36e4-4f9d-b511-352025811a6b}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -118,7 +123,7 @@
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <OutputFile>$(ProjectDir)lib\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(SolutionDir)lib\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\lib\x$(PlatformArchitecture)\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\lib\x$(PlatformArchitecture)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib; glfw3.lib;opengl32.lib;</AdditionalDependencies>
     </Lib>
@@ -139,7 +144,7 @@
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <OutputFile>$(ProjectDir)lib\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(SolutionDir)lib\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\lib\x$(PlatformArchitecture)\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\lib\x$(PlatformArchitecture)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib; glfw3.lib;opengl32.lib;</AdditionalDependencies>
     </Lib>
@@ -164,7 +169,7 @@
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <OutputFile>$(ProjectDir)lib\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(SolutionDir)lib\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\lib\x$(PlatformArchitecture)\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\lib\x$(PlatformArchitecture)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib; glfw3.lib;opengl32.lib;</AdditionalDependencies>
     </Lib>
@@ -189,7 +194,7 @@
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <OutputFile>$(ProjectDir)lib\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(SolutionDir)lib\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\lib\x$(PlatformArchitecture)\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\lib\x$(PlatformArchitecture)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib; glfw3.lib;opengl32.lib;</AdditionalDependencies>
     </Lib>

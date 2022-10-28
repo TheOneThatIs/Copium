@@ -43,7 +43,7 @@ namespace Copium {
 		};
 		glGenBuffers(1, &vbo);
 		glBindBuffer(GL_ARRAY_BUFFER, vbo);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 3, triangle, GL_STATIC_DRAW)
+		glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 3, triangle, GL_STATIC_DRAW);
 	}
 
 	void Window::Render() {
