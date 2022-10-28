@@ -19,10 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\CopiumRenderer\Shader.h" />
     <ClInclude Include="Source\CopiumRenderer\Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\CopiumRenderer\Shader.cpp" />
     <ClCompile Include="Source\CopiumRenderer\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\CopiumRenderer\Shaders\shader.frag" />
+    <None Include="Source\CopiumRenderer\Shaders\shader.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
