@@ -19,19 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\CopiumRenderer\Shader.h" />
-    <ClInclude Include="Source\CopiumRenderer\Window.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Source\CopiumRenderer\Shader.cpp" />
     <ClCompile Include="Source\CopiumRenderer\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\CopiumRenderer\Shaders\shader.frag" />
-    <None Include="Source\CopiumRenderer\Shaders\shader.vert" />
+    <ClInclude Include="Source\CopiumRenderer\Shader.h" />
+    <ClInclude Include="Source\CopiumRenderer\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CopiumIO\CopiumIO.vcxproj">
+    <ProjectReference Include="..\CopiumIO\CopiumIO.vcxproj">
       <Project>{1cf989d1-36e4-4f9d-b511-352025811a6b}</Project>
     </ProjectReference>
   </ItemGroup>
@@ -88,24 +84,24 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)bin\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\$(PlatformTarget)\</IntDir>
-    <TargetName>$(ProjectName)$(PlatformArchitecture)s</TargetName>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)bin\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\$(PlatformTarget)\</IntDir>
-    <TargetName>$(ProjectName)$(PlatformArchitecture)s</TargetName>
+    <OutDir>$(OutDir)$(TargetName)$(TargetExt)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)bin\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\$(PlatformTarget)\</IntDir>
-    <TargetName>$(ProjectName)$(PlatformArchitecture)s</TargetName>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)bin\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\$(PlatformTarget)\</IntDir>
-    <TargetName>$(ProjectName)$(PlatformArchitecture)s</TargetName>
+    <OutDir>$(OutDir)$(TargetName)$(TargetExt)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -113,7 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\include\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\include\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\include\;$(SolutionDir)CopiumIO\Source\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -123,7 +119,7 @@
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <OutputFile>$(SolutionDir)lib\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\lib\x$(PlatformArchitecture)\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\lib\x$(PlatformArchitecture)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib; glfw3.lib;opengl32.lib;</AdditionalDependencies>
     </Lib>
@@ -134,7 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\include\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\include\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\include\;$(SolutionDir)CopiumIO\Source\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -157,7 +153,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\include\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\include\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\include\;$(SolutionDir)CopiumIO\Source\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -169,7 +165,7 @@
       <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <OutputFile>$(SolutionDir)lib\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\lib\x$(PlatformArchitecture)\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\lib\x$(PlatformArchitecture)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32s.lib; glfw3.lib;opengl32.lib;</AdditionalDependencies>
     </Lib>
@@ -182,7 +178,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\include\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\Libraries\GLFW-3.3.8\include\;$(SolutionDir)..\..\Libraries\GLEW-2.1.0\include\;$(SolutionDir)CopiumIO\Source\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
